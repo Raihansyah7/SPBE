@@ -46,7 +46,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><img src="{{ asset('images/logo.png') }}" style="margin-right: 10px;"><span>Sistem Informasi Manajemen Pengetahuan</span></a></h1>
+        <h1><a href="index.html"><img src="{{ asset('img/logo.ico') }}" style="margin-right: 10px;"><span>Sistem Informasi Manajemen Pengetahuan</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -352,7 +352,7 @@
                   <div class="rounded landing-dark-border p-1 mb-10">
                     <h2 class="text-white page_speed_47478671">
                       <div class="symbol symbol-square symbol-70px me-5">
-                        <img src="{{ asset('images/logo.png') }}" class="" alt="" style="width:75px;height:100px;padding-bottom: 10px;"> Kota Bogor
+                        <img src="{{ asset('img/logo.png') }}" class="" alt="" style="width:75px;height:100px;padding-bottom: 10px;"> Kota Bogor
                       </div> 
                     </h2>
                     <span class="fw-normal fs-7 text-white">Jl. Ir. H. Juanda No.10, RT.01/RW.01, Pabaton, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16121</span><br>
