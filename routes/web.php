@@ -45,7 +45,7 @@ Route::get('/cek-role', function () {
 });
 
 Route::group(['middleware' => ['role:admin|penulis']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'home']);
 
     Route::resource('/kategori', KategoriController::class);
     Route::post('/kategori/search', [KategoriController::class, 'index']);
