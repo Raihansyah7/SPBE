@@ -25,30 +25,41 @@ class ArtikelController extends Controller
         $this->footer = Footer::select('konten')->first();
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $footer = $this->footer;
         $logo = Logo::select('gambar')->first();
         $banner = Banner::select('slug', 'sampul', 'judul')->latest()->get();
 
-        request()->session()->forget('search');
-        if (request()->search) {
-            $artikel = Post::select('sampul', 'judul', 'slug', 'created_at')->where('judul', 'LIKE', '%'. request()->search .'%')->latest()->paginate(6);
+        // request()->session()->forget('search');
+        // if (request()->search) {
+        //     $artikel = Post::select('sampul', 'judul', 'slug', 'created_at')->where('judul', 'LIKE', '%'. request()->search .'%')->latest()->paginate(6);
 
-            if (count($artikel) == 0) {
-                request()->session()->flash('search', 'Post yang anda cari tidak ada');
-            }
-            $search = request()->search;
-        } else {
-            $artikel = Post::select('sampul', 'judul', 'slug', 'created_at')->latest()->paginate(6);
-            $search = '';
+        //     if (count($artikel) == 0) {
+        //         request()->session()->flash('search', 'Post yang anda cari tidak ada');
+        //     }
+        //     $search = request()->search;
+        // } else {
+        //     $artikel = Post::select('sampul', 'judul', 'slug', 'created_at')->latest()->paginate(6);
+        //     $search = '';
+        // }
+
+        if(isset($_GET['q'])){
+            $artikel = Post::where('judul', 'LIKE', '%' . $_GET['q'] . '%')->latest()->paginate(6);
+            // dd($artikel);
+        }
+        else{
+        // date_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    default_timezone_set('Jakarta');
+            $artikel = Post::get();
         }
 
         $kategori = Kategori::select('slug', 'nama')->orderBy('nama', 'asc')->get();
         $home = true;
         $author = User::getAdminPenulis();
         $rekomendasi = Rekomendasi::select('id_post')->latest()->paginate(3);
-        return view('index', compact('artikel', 'kategori', 'banner', 'logo', 'footer', 'home', 'author', 'search', 'rekomendasi'));
+         
+        // return view('index', compact('artikel', 'kategori', 'banner', 'logo', 'footer', 'home', 'author', 'search', 'rekomendasi'));
+        return view('index', compact('artikel', 'kategori', 'banner', 'logo', 'footer', 'home', 'author', 'rekomendasi'));
     }
 
     public function artikel($slug)

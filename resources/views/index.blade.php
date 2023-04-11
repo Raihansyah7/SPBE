@@ -13,23 +13,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!-- Favicons -->
-  <link href="assets/img/logo.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ asset('img/logo.ico') }}" rel="icon">
+  <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Bootslander - v4.10.0
@@ -46,7 +46,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><img src="images/logo.png" style="margin-right: 10px;"><span>Sistem Informasi Manajemen Pengetahuan</span></a></h1>
+        <h1><a href="index.html"><img src="{{ asset('images/logo.png') }}" style="margin-right: 10px;"><span>Sistem Informasi Manajemen Pengetahuan</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -76,21 +76,23 @@
             <h1>Pusat Berbagi Pengetahuan <span>SPBE</span></h1>
             <h2>Kota Bogor</h2>
             <!-- Search bar -->
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Cari Artikel" id="rcorners2">
-              &nbsp
-              <div class="input-group-append">
-                <button class="btn btn-secondary btn-success" type="button" style="height: fit-content;">
-                  Cari
-                </button>
+            <form action="{{ url('/') }}" method="GET" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" name="q" placeholder="Cari Artikel" id="rcorners2">
+                &nbsp
+                <div class="input-group-append">
+                  <button class="btn btn-secondary btn-success" type="submit" style="height: fit-content;">
+                    Cari
+                  </button>
+                </div>
               </div>
-            </div>
+            </form>
             <!-- Search bar end -->
           </div>
         </div>
         <!-- Home Floating Logo -->
         <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
-          <img src="assets/img/kotabogor.png" class="img-fluid animated" alt="" style="width: 80%; margin-left: auto; margin-right: auto;">
+          <img src="{{ asset('img/kotabogor.png') }}" class="img-fluid animated" alt="" style="width: 80%; margin-left: auto; margin-right: auto;">
         </div>
         <!-- Home Floating Logo end -->
       </div>
@@ -350,7 +352,7 @@
                   <div class="rounded landing-dark-border p-1 mb-10">
                     <h2 class="text-white page_speed_47478671">
                       <div class="symbol symbol-square symbol-70px me-5">
-                        <img src="images/logo.png" class="" alt="" style="width:75px;height:100px;padding-bottom: 10px;"> Kota Bogor
+                        <img src="{{ asset('images/logo.png') }}" class="" alt="" style="width:75px;height:100px;padding-bottom: 10px;"> Kota Bogor
                       </div> 
                     </h2>
                     <span class="fw-normal fs-7 text-white">Jl. Ir. H. Juanda No.10, RT.01/RW.01, Pabaton, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16121</span><br>
@@ -375,7 +377,7 @@
                     <div class="d-flex flex-column ms-lg-20 page_speed_494895017">
                       <h6 class="text-white mb-2"> <strong>Tetap Terhubung</strong></h6>
                       <a href="https://www.facebook.com/PemerintahKotaBogor/" class="mb-1">
-                        <di class="text-white opacity-70 text-hover-white fs-6 mb-6">Facebook</di>
+                        <div class="text-white opacity-70 text-hover-white fs-6 mb-6">Facebook</div>
                       </a>
                       <a href="https://www.instagram.com/pemkotbogor/" class="mb-4">
                         <span class="text-white opacity-70 text-hover-white fs-6 mb-6">Instagram</span>
@@ -400,18 +402,18 @@
   <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
+  {{-- <div id="preloader"></div> --}}
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 
