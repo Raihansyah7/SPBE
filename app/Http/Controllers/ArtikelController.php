@@ -48,7 +48,7 @@ class ArtikelController extends Controller
         $home = true;
         $author = User::getAdminPenulis();
         $rekomendasi = Rekomendasi::select('id_post')->latest()->paginate(3);
-        return view('artikel/index', compact('artikel', 'kategori', 'banner', 'logo', 'footer', 'home', 'author', 'search', 'rekomendasi'));
+        return view('index', compact('artikel', 'kategori', 'banner', 'logo', 'footer', 'home', 'author', 'search', 'rekomendasi'));
     }
 
     public function artikel($slug)
