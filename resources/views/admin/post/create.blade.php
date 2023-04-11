@@ -18,7 +18,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="sampul">Sampul</label>
+            <label for="sampul">Gambar</label>
             <input type="file" class="form-control" id="sampul" name="sampul">
             @error('sampul')
                 <small class="text-danger">{{ $message }}</small>

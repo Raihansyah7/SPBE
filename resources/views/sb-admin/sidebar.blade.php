@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3" >Blog</div>
+        <div class="sidebar-brand-text mx-3">SPBE</div>
       </a>
 
       <!-- Divider -->
@@ -31,8 +31,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item @yield('post')" href="/post">Post</a>
             <a class="collapse-item @yield('kategori')" href="/kategori">Kategori</a>
-            <a class="collapse-item @yield('tag')" href="/tag">Tag</a>
-            <a class="collapse-item @yield('banner')" href="/banner">Banner</a>
           </div>
         </div>
       </li>

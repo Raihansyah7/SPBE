@@ -32,7 +32,7 @@ class PostController extends Controller
 
         $search = '';
         if (request()->search) {
-            $post = Post::select('id', 'judul', 'sampul', 'id_kategori')->where('id_user', Auth::user()->id)->where('judul', 'LIKE', '%'. request()->search .'%')->latest()->paginate(10);
+            $post = Post::select('id', 'judul', 'sampul', 'id_kategori', 'created_at')->where('id_user', Auth::user()->id)->where('judul', 'LIKE', '%'. request()->search .'%')->latest()->paginate(10);
             $search = request()->search;
 
             if (count($post) == 0) {
@@ -43,7 +43,7 @@ class PostController extends Controller
                 '); 
             }
         } else {
-            $post = Post::select('id', 'judul', 'sampul', 'id_kategori')->where('id_user', Auth::user()->id)->latest()->paginate(10);
+            $post = Post::select('id', 'judul', 'sampul', 'id_kategori', 'created_at')->where('id_user', Auth::user()->id)->latest()->paginate(10);
         }
        
         return view('admin/post/index', compact('post', 'footer', 'search'));

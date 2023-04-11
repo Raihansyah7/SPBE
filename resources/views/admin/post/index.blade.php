@@ -16,10 +16,10 @@
             <thead>
                 <tr>
                 <th scope="col">No</th>
-                <th scope="col">Sampul</th>
+                <th scope="col">Gambar</th>
                 <th scope="col">Judul</th>
                 <th scope="col">Kategori</th>
-                <th scope="col">Tag</th>
+                <th scope="col">Dibuat</th>
                 <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -31,9 +31,7 @@
                     <td>{{$row->judul}}</td>
                     <td>{{$row->kategori->nama}}</td>
                     <td>
-                       @foreach ($row->tag as $tag)
-                           <span class="badge badge-secondary">{{$tag->nama}}</span>
-                       @endforeach
+                       <p>{{$row->created_at}}</p>
                     </td>
                     <td width="35%">
                         <div class="btn-group" role="group" aria-label="Basic example">
